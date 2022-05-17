@@ -1,0 +1,72 @@
+﻿
+@model List<insta.Models.User>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<meta charset="utf-8">
+<title>jQuery UI Autocomplete - Default functionality</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/Home.css"/>
+<br /><br /><br />
+<style>
+    .form-control {
+        width: unset !important;
+    }
+</style>
+<div class="container">
+    <div class="ui-widget ">
+
+
+        @using (Html.BeginForm())
+        {
+       
+
+            <div class="search-box autocomplete">
+                <input class="form-control autocomplete col-md-4" id="tags" name="tags" type="text" placeholder="Search Here">
+                <input class="form-control col-md-1" id="search-inp" type="submit" value="search" />
+            </div>
+        }
+    </div>
+    <br />
+    @if (Model != null)
+    {
+
+        foreach (var item in Model)
+        {
+            
+            <p class="search-result">
+                <a href="/Search/Details/@item.Id" class="linker">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </a>
+            </p>
+
+
+        }
+
+
+    }
+</div>
+
+<script>
+    $(function () {
+        var availableTags = [];
+        $.ajax(
+            {
+                type: 'GET',
+                url: '../Search/GetUsers',
+                success: function (response) {
+                    $.each(response, function (key, item) {
+                        availableTags.push(item.Username, item.Email);
+                    });
+                }
+            });
+        $("#tags").autocomplete({
+            source: availableTags
+        });
+    });
+</script>
