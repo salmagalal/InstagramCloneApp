@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.right-side {
+  width: 45%;
+  margin-top: 35px;
+  /*position: absolute;
+    right: 30px;*/
+
+  margin-left: 30px;
+}
+
+.right-side .profile-title {
+  display: flex;
+  align-items: center;
+}
+
+.right-side .profile-title .profile-left {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.right-side .profile-title .profile-left .image img {
+  border: 50%;
+  margin-right: 15px;
+}
+
+.right-side .profile-title .profile-left .details .name {
+  padding-bottom: 3px;
+}
+
+.suggestions {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.suggestions p{
+  margin-right: 90px;
+}
+
+    .suggestions h2 {
+        margin-left: 10px;
+    }
+.suggestions p:last-child {
+  margin-right: 0px;
+}
+
+.suggestion-title {
+  display: flex;
+  /*check this later*/
+  justify-content: space-between;
+  width: 52%;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.suggestion-right{
+    margin-left:10px;
+    
+}
+
+.suggestion-right button{
+    margin-left: 10px;
+    padding:1px;
+    font-weight:bold;
+    background-color:white;
+    cursor:pointer;
+}
+.suggestion-title .suggestion-left {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.suggestion-title .suggestion-left .image img {
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  margin-left:20px;
+}
+
+.suggestion-title .suggestion-left .details .name {
+  padding-bottom: 3px;
+}
+
+
+.post-div{
+    margin-left:20px;
+}
+
+.head-title{
+    margin-bottom:15px;
+}
+
+
+label{
+    font-size:20px;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.send-inp {
+    margin-left: 70px;
+    margin-top:10px;
+    padding: 1px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    padding:4px 7px 4px 7px;
+    border-radius:5px;
+}
+/*Media Queries*/
+@media (max-width: 992px) {
+    header {
+    padding: 10px 20px;
+  }
+
+  section .left-side {
+    width: 100%;
+  }
+
+  section .right-side {
+    display: none;
+  }
+}
