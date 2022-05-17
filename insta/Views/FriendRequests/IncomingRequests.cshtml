@@ -1,0 +1,62 @@
+﻿@model IList<insta.Models.FriendRequest>
+@{
+    ViewBag.Title = "IncomingRequests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Friends List</title>
+    <link rel="stylesheet" href="~/Content/show-friends.css">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+@*@{
+        foreach (var item in Model)
+        {
+            <img src="~/images/profiles/@item.Sender.Photo" height="150px" />
+            <h3>@item.Sender.FirstName @item.Sender.LastName</h3>
+            <h5><a href="/AcceptRequest/Accept/@item.Sender.Id">Accept Friend </a></h5>
+            <h5><a href="/Reject/Reject/@item.Sender.Id">Reject</a></h5>
+
+
+
+        }
+    }*@
+
+<div class="left-side">
+
+
+    <div class="suggestions">
+        <h2>Incoming Requests</h2>
+
+    </div>
+
+
+    @{foreach (var item in Model)
+        {
+            <div class="suggestion-title">
+                <div class="suggestion-left">
+
+                    <div class="image">
+                        <img src="~/images/profiles/@item.Sender.Photo" alt=" " height="64" width="64">
+                    </div>
+
+                    <div class="details">
+                        <p class="name">@item.Sender.FirstName @item.Sender.LastName</p>
+                    </div>
+
+                    <div class="suggestion-right">
+                        <a href="/AcceptRequest/Accept/@item.Sender.Id"><button>Accept</button></a>
+                    </div>
+
+                    <div class="suggestion-right">
+                        <a href="/Reject/Reject/@item.Sender.Id"><button>Reject</button></a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
