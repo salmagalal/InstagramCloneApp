@@ -1,0 +1,85 @@
+﻿@model insta.Models.User
+
+@{
+    ViewBag.Title = "LogIn";
+    Layout = null;
+}
+
+
+<head>
+    <title>Login/Sign up page</title>
+    <link rel="stylesheet" href="~/Content/login.css">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="Logoig">
+            <img src="~/Content/Instagram-Logo.png" class="Logo">
+        </div>
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Login</span>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "" })
+
+                    <div class="input-field">
+                        @Html.TextBoxFor(model => model.Username, htmlAttributes: new { @placeholder = "Enter Your User Name" })
+
+
+                        @*@Html.ValidationMessageFor(model => model.Username, "", new { })*@
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+
+
+                    <div class="input-field">
+                        @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "password", @placeholder = "Enter Your Password" })
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash showHidePW"></i>
+
+
+                        @*@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })*@
+
+                    </div>
+
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="signCheck">
+                            <label for="signCheck" class="text">Remember me</label>
+                        </div>
+                        <a href="#" class="text">Forgot Password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Login Now" class="button">
+                    </div>
+
+
+                }
+
+                <div class="login-signup">
+                    <span class="text">
+                        Not a member?
+                        <a href="/User/CreateProfile" class="text signup-link">Signup now</a>
+                    </span>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+
+

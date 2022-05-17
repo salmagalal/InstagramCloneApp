@@ -1,0 +1,122 @@
+﻿@model insta.Models.User
+
+@{
+    /**/
+
+    ViewBag.Title = "EditProfile";
+    Layout = null;
+}
+<head>
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="~/Content/sign3.css">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Logoig">
+            <img src="~/Content/Instagram-Logo.png" class="Logo">
+        </div>
+        <div class="forms">
+            <div class="form signup">
+                <span class="title">Edit Profile</span>
+                @using (Html.BeginForm("EditProfile", "Profile", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+               
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+
+                    <div class="input-field">
+                        @*@Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @placeholder = "Enter Your First Name" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @placeholder = "Enter Your Last Name" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @placeholder = "Enter Your User Name" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @placeholder = "Enter Your Email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.MobileNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @placeholder = "Enter Your Phone Number" } })
+                        @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        @Html.PasswordFor(model => model.Password, htmlAttributes: new { @class = "password", @placeholder = "Enter Your Password" })
+
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-lock icon"></i>
+
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        @Html.PasswordFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "password", @placeholder = "Confirm Your Password" })
+
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-solid fa-eye-slash showHidePW"></i>
+
+                    </div>
+
+                    <div class="input-field">
+                        @*@Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+                        <input id="file" name="file" type="file" class="text-danger" placeholder="Drag a Profile Image" />
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+
+
+                    <div class="input-field button">
+                        <input type="submit" value="Edit Profile" class="button">
+                    </div>
+                
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+
+@*<div>
+    @Html.ActionLink("Back", "Profile", "Profile")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

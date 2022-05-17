@@ -1,0 +1,147 @@
+﻿@model insta.Models.User
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<head>
+    <title>Profile Page</title>
+    <link href="~/Content/profile.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<div class="container">
+    <div class="profile">
+        <div class="profile-image">
+            <img src="~/images/profiles/@Model.Photo" alt="" height="150" width="150">
+        </div>
+
+        <div class="profile-settings">
+            <h1 class="user-name">@Model.FirstName @Model.LastName</h1><br />
+            <!--<button class="settings-button"><i class="fas fa-cog" aria-hidden></i></button>-->
+            <button class="edit-profile">@Html.ActionLink("Edit Profile", "EditProfile", new { Controller = "Profile", id = Model.Id }, new { style = "text-decoration:none;" })</button>
+            <a style="text-decoration:none;" href="/PostPhoto/AddPost" class="edit-profile">Add Post</a>
+        </div>
+
+        <div class="profile-status">
+            <ul>
+                <li><span class="profile-stat-count">@Model.Posts.Count </span>Posts</li>
+
+            </ul>
+        </div>
+
+        <!--
+        <div class="profile-bio">
+            <p><span class="profile-real-name">The_Cute_Turtles</span></p>
+        </div> -->
+
+    </div>
+
+    <!--End of profile div-->
+</div>
+<!--End of container div-->
+
+
+<main>
+    <div class="container">
+        <div class="gallery">
+            <!--first-->
+            <div class="col-sm-12 col-xs-12">
+                @{foreach (var item in Model.Posts)
+                    {
+                        <div class="gallery-item" tabindex="0">
+                            <img style="margin-bottom:10px;" src="@item.Photo" alt="gallery-1" class="gallery-image">
+                            <div class="gallery-item-info">
+                                <ul>
+                                    <li class="gallery-item-likes">
+
+                                        <div class="btns">
+                                            <Button onclick="Toggle1(); sendReact('@item.Id','@Session["Userid"]',1)" id="btnh1" class="btn"><i class="fas fa-heart"></i></Button>
+                                            <button class="visually-hidden">Likes:</button><i aria-hidden>@item.Reacts.Where(m => m.Like == 1).ToList().Count</i>
+                                            <Button onclick="Toggle2(); sendReact('@item.Id','@Session["Userid"]',0)" id="btnh2" class="btn"><i class="far fa-heart"></i></Button>
+                                        </div>
+
+                                        <br />
+                                        <input type="text" id="@item.Id" />
+                                        <input type="button" onclick="sendcomment('@item.Id','@Session["Userid"]')" value="Comment" />
+                                    </li>
+                                </ul>
+
+                            </div>
+                            @{foreach (var i in item.Comments)
+                                {
+                                    <div class="comment">
+                                        <img style="margin-bottom:-10px; display:inline" src="~/images/profiles/@i.User.Photo" alt="" height="33" width="33">
+                                        <h5 style="display:inline; color:deepskyblue; ">@i.User.FirstName  @i.User.LastName</h5>
+                                        <h3 style="display:inline">@i.CommentText</h3>
+                                    </div>
+                                    <br />
+                                    <br />
+                                }
+
+                            }
+                        </div>
+
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<script src="~/Scripts/Comment.js"></script>
+<script src="~/Scripts/React.js"></script>
+
+<script>
+
+
+    //    First Like Button
+    var btnvar1 = document.getElementById('btnh1');
+
+    function Toggle1() {
+        if (btnvar1.style.color == "red") {
+            btnvar1.style.color = "grey"
+        }
+        else {
+            btnvar1.style.color = "red"
+        }
+    }
+
+
+
+    //    Second Like Button
+    var btnvar2 = document.getElementById('btnh2');
+
+    function Toggle2() {
+        if (btnvar2.style.color == "red") {
+            btnvar2.style.color = "grey"
+        }
+        else {
+            btnvar2.style.color = "red"
+        }
+    }
+
+
+
+
+
+
+</script>
+

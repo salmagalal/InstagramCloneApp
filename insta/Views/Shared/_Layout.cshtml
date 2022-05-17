@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Home.css">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="insta">
+    <header>
+        <div class="logo">
+            <img src="~/Content/instalogo.png" alt="Logo">
+        </div>
+      
+
+        <nav>
+            <ul>
+
+                <li><a href="/Friends/MyFriends"><i class="fa-solid fa-user-group"></i></a></li>
+                <li><a href="/PostPhoto/AddPost"><i class="fa-regular fa-square-plus"></i></a></li>
+                <li><a href="/FriendRequests/IncomingRequests"><i class="fa-regular fa-heart"></i></a></li>
+                <li><a href="/PostPhoto/Index/"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/Search/Index/"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li><a href="/AddFriend/MyRequests/"><i class="fa-solid fa-people-pulling"></i></a></li>
+                <li><a href="/LogOut/Index/"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li>
+
+
+            </ul>
+        </nav>
+    </header>
+    </div>
+    
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Instagram</p>
+        </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
