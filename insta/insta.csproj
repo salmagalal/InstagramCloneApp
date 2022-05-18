@@ -140,11 +140,12 @@
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Controllers\AcceptRequestController.cs" />
     <Compile Include="Controllers\AddFriendController.cs" />
-    <Compile Include="Controllers\CancleRequestController.cs" />
+    <Compile Include="Controllers\CancelRequestController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\FriendRequestsController.cs" />
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\LogOutController.cs" />
+    <Compile Include="Controllers\MyRequestsController.cs" />
     <Compile Include="Controllers\PostPhotoController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ReactController.cs" />
@@ -157,6 +158,10 @@
     <Compile Include="Migrations\202205162144547_tables.cs" />
     <Compile Include="Migrations\202205162144547_tables.designer.cs">
       <DependentUpon>202205162144547_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205180249151_clean.cs" />
+    <Compile Include="Migrations\202205180249151_clean.designer.cs">
+      <DependentUpon>202205180249151_clean.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -294,17 +299,18 @@
     <Content Include="Views\PostPhoto\Index.cshtml" />
     <Content Include="Views\PostPhoto\AddPost.cshtml" />
     <Content Include="Views\Search\Details.cshtml" />
-    <Content Include="Views\AddFriend\MyRequests.cshtml" />
     <Content Include="Views\FriendRequests\IncomingRequests.cshtml" />
     <Content Include="Views\Friends\MyFriends.cshtml" />
     <Content Include="Views\Friends\MyFriend.cshtml" />
     <Content Include="Views\LogOut\Index.cshtml" />
+    <Content Include="Views\MyRequests\MyRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\posts\" />
     <Folder Include="images\profiles\" />
     <Folder Include="Views\AcceptRequest\" />
+    <Folder Include="Views\AddFriend\" />
     <Folder Include="Views\CancelRequest\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\React\" />
@@ -320,6 +326,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205162144547_tables.resx">
       <DependentUpon>202205162144547_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205180249151_clean.resx">
+      <DependentUpon>202205180249151_clean.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
