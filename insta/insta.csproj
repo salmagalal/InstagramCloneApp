@@ -140,6 +140,7 @@
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Controllers\AcceptRequestController.cs" />
     <Compile Include="Controllers\AddFriendController.cs" />
+    <Compile Include="Controllers\AddPostController.cs" />
     <Compile Include="Controllers\CancelRequestController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\FriendRequestsController.cs" />
@@ -296,14 +297,14 @@
     <Content Include="Views\Profile\Profile.cshtml" />
     <Content Include="Views\Profile\EditProfile.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\PostPhoto\Index.cshtml" />
-    <Content Include="Views\PostPhoto\AddPost.cshtml" />
     <Content Include="Views\Search\Details.cshtml" />
     <Content Include="Views\FriendRequests\IncomingRequests.cshtml" />
     <Content Include="Views\Friends\MyFriends.cshtml" />
     <Content Include="Views\Friends\MyFriend.cshtml" />
     <Content Include="Views\LogOut\Index.cshtml" />
     <Content Include="Views\MyRequests\MyRequests.cshtml" />
+    <Content Include="Views\PostPhoto\PostPhoto.cshtml" />
+    <Content Include="Views\AddPost\AddPost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

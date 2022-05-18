@@ -25,7 +25,7 @@
             <h1 class="user-name">@Model.FirstName @Model.LastName</h1><br />
             <!--<button class="settings-button"><i class="fas fa-cog" aria-hidden></i></button>-->
             <button class="edit-profile">@Html.ActionLink("Edit Profile", "EditProfile", new { Controller = "Profile", id = Model.Id }, new { style = "text-decoration:none;" })</button>
-            <a style="text-decoration:none;" href="/PostPhoto/AddPost" class="edit-profile">Add Post</a>
+            <a style="text-decoration:none;" href="/AddPost/AddPost" class="edit-profile">Add Post</a>
         </div>
 
         <div class="profile-status">
