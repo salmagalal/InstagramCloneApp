@@ -1,0 +1,42 @@
+﻿@model insta.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" href="~/Content/view-data.css">
+</head>
+
+
+
+<body>
+    <div class="details">
+        <div class="outer-div">
+            <h2 class="title">Details</h2>
+            <div class="inner-details">
+
+                <div class="profile-image">
+                    <img src="~/images/profiles/@Model.Photo" alt="" height="80" width="80">
+                </div>
+
+                <div class="profile-settings">
+                    <p class="user-name">@Model.Username</p>
+                    <a href="/AddFriend/AddFriend/@Model.Id"><button class="add-friend">Add Friend</button></a>
+                </div>
+                <div class="Names">
+
+                    <div class="fname">
+                        <p style="float: left;">Name : </p>
+                        <p class="actualname">@Model.FirstName @Model.LastName</p>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

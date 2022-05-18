@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@100&family=Source+Code+Pro:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  /*background-color: rgb(224, 183, 183);*/
+}
+
+.container {
+  flex-direction: column;
+  position: relative;
+  max-width: 430px;
+  width: 100%;
+  background-color: #f8d6e3;
+  /*background-image: linear-gradient(
+    45deg,
+    #e95950,
+    #bc2a8d,
+    #bc2a8d,
+    #fbad50,
+    #cd486b,
+    #4c68d7
+  );*/
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*.Logo{
+    max-width: 430px;
+    max-height: 100px;
+    background-image: linear-gradient(45deg,#e95950, #bc2a8d, #bc2a8d , #fbad50 , #cd486b , #4c68d7);
+    
+}*/
+
+/*.Logo{
+    max-width: 100%;
+    background-color: #f8d6e3;
+    max-height: 100%;
+    
+}*/
+
+.Logoig {
+  max-width: 430px;
+  max-height: 70px;
+  /*background-color: #f8d6e3; */
+  background-image: linear-gradient(45deg,#e95950, #bc2a8d, #bc2a8d , #fbad50 , #cd486b , #4c68d7); 
+
+}
+.Logo {
+  width: 50%;
+  height: 70px;
+  /*background-color: #f8d6e3;*/
+  
+}
+.container .forms {
+  display: flex;
+  align-items: center;
+  height: 440px;
+  width: 200%;
+
+  /*background-color: red;  */
+}
+
+.container .form {
+  padding: 30px;
+  width: 50%;
+  /* background-color: white;*/
+  /*background-image: linear-gradient(
+    45deg,
+    #e95950,
+    #bc2a8d,
+    #bc2a8d,
+    #fbad50,
+    #cd486b,
+    #4c68d7
+  ); */
+  transition: margin-left 0.18s ease;
+}
+
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup {
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+
+.container.active .signup {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.container.active .forms {
+  height: 560px;
+}
+
+.container .form .title {
+  margin-top: 20px;
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+  border-bottom-color: #cf0d92 ;
+}
+
+
+::placeholder {
+  color: #000000;
+}
+
+.input-field i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+.input-field i.icon {
+  left: 0;
+}
+
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #cf0d92 ;
+  }
+  
+.input-field i.showHidePW {
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input {
+  margin: 0 8px -2 4px;
+  accent-color: #000000;
+}
+
+.form .text {
+  size: 12px;
+  color: #000000;
+}
+.form a {
+  text-decoration: none;
+}
+
+.form a:hover {
+  text-decoration: underline;
+}
+
+.input-field input.button {
+  border: 2px solid black;
+  background-color: #000000;
+  letter-spacing: 1px;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  border-radius: 10px;
+}
+.input-field input.button:hover {
+  border: 2px solid black;
+  background-image: linear-gradient(45deg,#e95950, #bc2a8d, #bc2a8d , #fbad50 , #cd486b , #4c68d7);
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form .login-signup {
+  margin-top: 30px;
+  text-align: center;
+}
