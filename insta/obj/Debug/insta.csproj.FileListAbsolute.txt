@@ -696,3 +696,4 @@ C:\Users\DELL\Documents\GitHub\InstagramCloneApp\insta\obj\Debug\insta.csproj.Co
 C:\Users\DELL\Documents\GitHub\InstagramCloneApp\insta\obj\Debug\insta.csproj.CopyComplete
 C:\Users\DELL\Documents\GitHub\InstagramCloneApp\insta\obj\Debug\insta.dll
 C:\Users\DELL\Documents\GitHub\InstagramCloneApp\insta\obj\Debug\insta.pdb
+C:\Users\DELL\Documents\GitHub\InstagramCloneApp\insta\obj\Debug\insta.Migrations.clean.resources
