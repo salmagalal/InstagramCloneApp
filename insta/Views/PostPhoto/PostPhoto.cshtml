@@ -1,12 +1,8 @@
 ﻿@model insta.Models.User
 
 @{
-    ViewBag.Title = "Profile";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "PostPhoto";
 }
-
-
-
 
 <head>
     <title>Profile Page</title>
@@ -76,7 +72,7 @@
                             @{foreach (var i in item.Comments)
                                 {
                                     <div class="comment">
-                                        <img style="margin-bottom:-10px; display:inline" src="~/images/profiles/@i.User.Photo" alt="" height="33" width="33">
+                                        <img style="margin-bottom:-10px; display:inline" src="~/images/profiles/@Model.Photo" alt="" height="33" width="33">
                                         <h5 style="display:inline; color:deepskyblue; ">@i.User.FirstName  @i.User.LastName</h5>
                                         <h3 style="display:inline">@i.CommentText</h3>
                                     </div>
@@ -105,6 +101,16 @@
 <br />
 <br />
 <br />
+
+
+
+
+
+
+
+
+
+
 
 <script src="~/Scripts/Comment.js"></script>
 <script src="~/Scripts/React.js"></script>

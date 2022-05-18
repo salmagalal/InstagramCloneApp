@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "AddPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/show-friends.css">
+
+<div class="post-div">
+    <h2 class="head-title">AddPost</h2>
+
+    <form method="post" action="/AddPost/AddPost" enctype="multipart/form-data">
+        <label>photo</label>
+        <input type="file" name="photo" />
+        <br />
+        <input type="submit" value="send" class="send-inp" />
+    </form>
+</div>

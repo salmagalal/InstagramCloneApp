@@ -51,19 +51,19 @@ namespace insta.Controllers
 
 
 
-            return RedirectToAction("MyRequests");
+            return RedirectToAction("MyRequests","MyRequests");
         }
 
 
 
 
-        public ActionResult MyRequests()
-        {
-            int x = Convert.ToInt32(Session["Userid"]);
-            List<FriendRequest> FriendRequests = db.FriendRequest.Where(
-            m => m.Sender_Id == x).ToList();
-            return View(FriendRequests);
-        }
+        //public ActionResult MyRequests()
+        //{
+        //    int x = Convert.ToInt32(Session["Userid"]);
+        //    List<FriendRequest> FriendRequests = db.FriendRequest.Where(
+        //    m => m.Sender_Id == x).ToList();
+        //    return View(FriendRequests);
+        //}
 
 
     }

@@ -1,0 +1,43 @@
+﻿@model IList<insta.Models.FriendRequest>
+@{
+    ViewBag.Title = "MyRequests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<head>
+    <title>Friends List</title>
+    <link rel="stylesheet" href="~/Content/show-friends.css">
+    <script src="https://kit.fontawesome.com/5babd206a0.js" crossorigin="anonymous"></script>
+</head>
+
+
+<div class="left-side">
+
+
+    <div class="suggestions">
+        <h2>My Requests</h2>
+
+    </div>
+
+
+    @{foreach (var item in Model)
+        {
+            <div class="suggestion-title">
+                <div class="suggestion-left">
+
+                    <div class="image">
+                        <img src="~/images/profiles/@item.Reciever.Photo" alt=" " height="64" width="64">
+                    </div>
+                    <div class="details">
+                        <p class="name">@item.Reciever.FirstName @item.Reciever.LastName</p>
+                    </div>
+
+                    <div class="suggestion-right">
+                        <a href="/CancelRequest/Cancel/@item.Reciever.Id"><button>Cancel</button></a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
