@@ -11,6 +11,3 @@ https://user-images.githubusercontent.com/65875719/168935925-afc188a9-2644-4b96-
 
 # Documentation: #
 [InstagramDocumentation.pdf](https://github.com/salmagalal/InstagramCloneApp/files/8712456/InstagramDocumentation.pdf)
-
-# Evaluation form: #
-[SW2 – Project Evaluation Form Final .pdf](https://github.com/salmagalal/InstagramCloneApp/files/8712462/SW2.Project.Evaluation.Form.Final.pdf)
